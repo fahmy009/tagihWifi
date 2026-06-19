@@ -1,4 +1,4 @@
-# 🌐 tagihWIfi - Sistem Manajemen Penagihan Internet
+# 🌐 tagihWifi - Sistem Manajemen Penagihan Internet
 
 Aplikasi Android berbasis Jetpack Compose untuk mengelola penagihan internet pelanggan dengan integrasi Google Sheets sebagai database (Tanpa Server Berbayar).
 

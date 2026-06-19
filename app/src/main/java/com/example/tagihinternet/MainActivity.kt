@@ -47,8 +47,8 @@ class MainActivity : AppCompatActivity() {
                 val navController = rememberNavController()
                 val currentUser by authViewModel.currentUser.collectAsState()
 
-                // Check for updates from GitHub
-                UpdateManager.CheckUpdate(currentVersionCode = 1) // Ganti manual jika BuildConfig error
+                // Check for updates from GitHub (Ganti version code sesuai build.gradle)
+                UpdateManager.CheckUpdate(currentVersionCode = 1)
 
                 // Global redirect logic
                 LaunchedEffect(currentUser) {

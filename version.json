@@ -1,6 +1,6 @@
 {
-  "versionCode": 1,
-  "versionName": "1.1",
+  "versionCode": 2,
+  "versionName": "1.0",
   "downloadUrl": "https://github.com/fahmy009/tagihWIfi/releases/latest",
-  "releaseNotes": "Aplikasi siap digunakan!"
+  "releaseNotes": "Pembaruan sistem: \n- Navigasi bawah untuk Admin\n- Notifikasi mandiri setiap ada inputan baru\n- Fitur pencarian pelanggan global\n- Perbaikan bug sinkronisasi user"
 }

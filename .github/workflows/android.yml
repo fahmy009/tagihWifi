@@ -3,7 +3,11 @@ name: Android CI/CD
 on:
   push:
     tags:
-      - 'v*' # Akan berjalan otomatis setiap kali Anda push tag v1.0, v1.1, dst.
+      - 'v*' 
+  workflow_dispatch: 
+
+permissions:
+  contents: write # Izin mutlak untuk membuat rilis
 
 jobs:
   build:

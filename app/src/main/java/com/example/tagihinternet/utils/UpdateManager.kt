@@ -13,7 +13,7 @@ import org.json.JSONObject
 import java.net.URL
 
 object UpdateManager {
-    // URL Raw ke file version.json di repository Anda
+    // Link yang sudah diperbaiki (menggunakan titik, bukan koma)
     private const val GITHUB_VERSION_URL = "https://raw.githubusercontent.com/fahmy009/tagihWIfi/main/version.json"
     private const val GITHUB_RELEASE_URL = "https://github.com/fahmy009/tagihWIfi/releases/latest"
 
@@ -40,6 +40,10 @@ object UpdateManager {
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
+                    withContext(Dispatchers.Main) {
+                        // Jika ingin melihat error di layar, aktifkan baris di bawah:
+                        // android.widget.Toast.makeText(context, "Gagal cek update", android.widget.Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }

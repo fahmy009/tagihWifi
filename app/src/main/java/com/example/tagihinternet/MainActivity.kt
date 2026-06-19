@@ -47,8 +47,17 @@ class MainActivity : AppCompatActivity() {
                 val navController = rememberNavController()
                 val currentUser by authViewModel.currentUser.collectAsState()
 
-                // Check for updates from GitHub (Ganti version code sesuai build.gradle)
-                UpdateManager.CheckUpdate(currentVersionCode = 1)
+                val context = androidx.compose.ui.platform.LocalContext.current
+                val packageInfo = context.packageManager.getPackageInfo(context.packageName, 0)
+                val currentVersion = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    packageInfo.longVersionCode.toInt()
+                } else {
+                    @Suppress("DEPRECATION")
+                    packageInfo.versionCode
+                }
+
+                // Check for updates from GitHub
+                UpdateManager.CheckUpdate(currentVersionCode = currentVersion)
 
                 // Global redirect logic
                 LaunchedEffect(currentUser) {
